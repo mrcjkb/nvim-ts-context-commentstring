@@ -68,7 +68,7 @@ M.config = {
     glimmer = '{{! %s }}',
     go = { __default = '// %s', __multiline = '/* %s */' },
     graphql = '# %s',
-    haskell = '-- %s',
+    haskell = { __default = '-- %s', __multiline = '{- %s -}' },
     handlebars = '{{! %s }}',
     hcl = { __default = '# %s', __multiline = '/* %s */' },
     html = '<!-- %s -->',
