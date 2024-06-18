@@ -121,6 +121,18 @@ function M.check_node(node, language_config, commentstring_key)
 
   local node_type = node:type()
   local match = language_config[node_type]
+  if type(match) ~= 'table' then
+    print(
+      'commentstring_key',
+      vim.inspect(commentstring_key),
+      'language_config',
+      vim.inspect(language_config),
+      'node_type',
+      vim.inspect(node_type),
+      'match',
+      vim.inspect(match)
+    )
+  end
 
   if type(match) == 'table' then
     return match[commentstring_key] or match.__default or match
