@@ -122,7 +122,7 @@ function M.check_node(node, language_config, commentstring_key)
   local node_type = node:type()
   local match = language_config[node_type]
 
-  if match then
+  if type(match) == 'table' then
     return match[commentstring_key] or match.__default or match
   end
 
